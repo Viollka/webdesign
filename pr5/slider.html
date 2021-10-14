@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>3 Column Layout</title>
+   <link rel="stylesheet" href="assets/css/layout.css">
+</head>
+<body>
+<header class="header">
+    <p><img src="public/image/logo.PNG" width="45" alt="text"></p>
+
+    <script src="assets/js/script.js"></script>
+
+</header>
+
+     
+   </div>
+<div class="container">
+
+   <main class="center column">
+       <article>
+           <h1>Slider</h1>
+           <p>
+
+            <div id="slider">
+                <script>
+                    window.onload = function() {
+                        let slides = [
+                            {
+                                title: "Facebook",
+                                background: "https://via.placeholder.com/500x150",
+                                link: "https://www.facebook.com"
+                            }, {
+                                title: "Instagram",
+                                background: "https://via.placeholder.com/500x150",
+                                link: "https://www.instagram.com"
+                            }, {
+                                title: "Telegram",
+                                background: "https://via.placeholder.com/500x150",
+                                link: "https://web.telegram"
+                            }
+                        ]
+                        Slider.initSlider(slides);
+                    };
+                 </script>
+            </div>
+            
+            <button onclick="Slider.prevSlide()">Prev</button>
+            <button onclick="Slider.nextSlide()">Next</button>
+
+           </p>
+       </article>
+   </main>
+   
+
+   <nav class="left column">
+       <h3>Left heading</h3>
+       <ul>
+        <li><a href="about.html"> About </a> </li>
+        <li><a href="contact.html"> Contact </a> </li>
+        <li><a href="media.html"> Media </a> </li>
+        <li><a href="slider.html"> Slider </a> </li>
+        <li><a href="table.html"> Table </a> </li>
+       </ul>
+   </nav>
+   <div class="right column">
+       <h3>Right heading</h3>
+       <p></p>
+   </div>
+   <div class="push"></div>
+</div>
+<div class="footer-wrapper">
+    <p><img src="public/image/logo.PNG" width="45" alt="text"></p>
+</div>
+</body>
+</html>

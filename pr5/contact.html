@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>3 Column Layout</title>
+   <link rel="stylesheet" href="assets/css/layout.css">
+</head>
+<body>
+<header class="header">
+    <p><img src="public/images/logo.PNG" width="45" alt="text"></p>
+
+</header>
+<div class="container">
+   <main class="center column">
+       <article>
+           <h1>Contact</h1>
+           <p></p>
+       </article>
+        <form action="#">
+            <p><i>Please fill out the form. Required fields are marked </i><em>*</em></p>
+            <fieldset>
+              <legend>Контактная информация</legend>
+                <label for="First name">First name <em>*</em></label>
+                <input id="First name"><br>
+                <label for="Email">Email</label>
+                <input id="Email"><br>
+                <label for="Birthday">Birthday</label>
+                <input type="date" id="start" name="trip-start"
+                        value="2018-07-22"
+                        min="2018-01-01" max="2018-12-31">
+                <legend>Gender</legend>
+                <label for="Woman"><input id="Woman" type="checkbox"> Woman</label>
+                <label for="Men"><input id="Men" type="checkbox"> Men </label>
+                <p><label for="Country">Country</label>
+                <select id="Country">
+                  <option value="Ukraine">Ukraine</option>
+                  <option value="Russia">Russia</option>
+                  <option value="Slovakia">Slovakia</option></p>
+                </select><br>
+                <label for="Nomber">Nomber <em>*</em></label>
+                <input id="Nomber"><br>
+                <label for="Password">Password<em>*</em></label>
+                <input id="Password"><br>
+            </fieldset>
+            <legend>i accept terms and conditions</legend>
+            <label for="Yes"><input id="Yes" type="checkbox"> Yes</label>
+            <label for="No"><input id="No" type="checkbox"> No </label>
+            <p><label for="Notes">Notes</label></p>
+            <textarea id="Notes" name="Notes"
+            rows="5" cols="33">
+            Lorem ipsum...
+            </textarea></p>
+            <input name="myFile" type="file">
+            <p><input type="submit" value="Отправить информацию"></p>
+            </form>
+
+   </main>
+   <nav class="left column">
+       <h3>Left heading</h3>
+       <ul>
+        <li><a href="about.html"> About </a> </li>
+        <li><a href="contact.html"> Contact </a> </li>
+        <li><a href="media.html"> Media </a> </li>
+        <li><a href="slider.html"> Slider </a> </li>
+        <li><a href="table.html"> Table </a> </li>
+       </ul>
+   </nav>
+   <div class="right column">
+       <h3>Right heading</h3>
+       <p></p>
+   </div>
+   <div class="push"></div>
+</div>
+<div class="footer-wrapper">
+    <p><img src="public/images/logo.PNG" width="45" alt="text"></p>
+</div>
+</body>
+</html>
