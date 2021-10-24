@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>3 Column Layout</title>
+   <script src="assets/js/script.js"></script>
+   <link rel="stylesheet" href="assets/css/layout.css">
+      <link rel="stylesheet" href="assets/css/style.css">
+   <script>
+   window.onload = function() {
+       // ви можете зробити скільки завгодно слайдів
+       let slides = [
+           {
+               title: "Telegram",
+               background: src = "public/image/1.jpg",
+               link: "https://web.telegram.com"
+           },  {
+               title: "Instagram",
+               background: src = "public/image/2.jpg",
+               link: "https://www.instagram.com"
+           }, {
+               title: "Facebook",
+               background: src = "public/image/3.jpg",
+               link: "https://www.facebook.com"
+           }
+       ]
+       Slider.initSlider(slides);
+   };
+</script>
+
+</head>
+<body>
+<header class="header"><p><img src="public/image/logo.PNG" width="45" alt="text"></p></header>
+<div class="container">
+   <main class="center column">
+       <article>
+           <h1>Slider</h1>
+           <div id="slider" class = "Knopka"></div>
+		   
+			<button class =  "prev">Prev</button>
+			<button class = "next">Next</button>
+			<button class = "Btn">Show</button>
+			<button class = "toggleBtn">Start</button>
+			
+			<button class = "firstS">1</button>
+			<button class = "secondS">2</button>
+			<button class = "thirdS">3</button>
+			<script>
+ const prevBtn = document.querySelector('.prev');
+ const nextBtn = document.querySelector('.next');
+ const hide = document.querySelector('.Btn');
+ const firstB = document.querySelector('.firstS');
+  const secondB = document.querySelector('.secondS');
+   const thirdB = document.querySelector('.thirdS');
+const slider_container = document.querySelector('.Knopka');
+
+ firstB.addEventListener('click', () => {
+    Slider.setSlide(0);
+ });
+ 
+  secondB.addEventListener('click', () => {
+    Slider.setSlide(1);
+ });
+ 
+  thirdB.addEventListener('click', () => {
+    Slider.setSlide(2);
+ });
+
+
+prevBtn.addEventListener('click', () => {
+    Slider.prevSlide();
+ });
+
+nextBtn.addEventListener('click',() => {
+    Slider.nextSlide();
+})
+
+hide.addEventListener('click', () =>{
+      if (slider_container.classList.contains("Knopka")) {
+    hide.textContent = "Hide";
+  } else {
+    hide.textContent = "Show";
+  }
+
+  slider_container.classList.toggle("Knopka");
+})
+
+
+
+const toggle = document.querySelector('.toggleBtn');
+
+toggle.addEventListener('click', (event)=>{
+    if (event.target.classList.contains('start')){
+        event.target.innerHTML = 'Start';
+        clearInterval(interval)
+    } else {
+        event.target.innerHTML = 'Stop';
+        interval = setInterval(()=>{
+            Slider.nextSlide();
+        },3000)
+    }
+    event.target.classList.toggle('start')
+ });
+	
+			</script>
+       </article>
+   </main>
+   <nav class="left column">
+       <h3>Left heading</h3>
+       <ul>
+	   	   <li><a href="index.html">index</a></li>
+           <li><a href="about.html">about</a></li>
+		   <li><a href="contact.html">contact</a></li>
+		   <li><a href="media.html">media</a></li>
+		   <li><a href="table.html">table</a></li>
+       </ul>
+   </nav>
+   <div class="right column">
+    <h3>Right heading</h3>
+    <p></p>
+</div>
+<div class="push"></div>
+</div>
+<div class="footer-wrapper">
+ <p><img src="public/image/logo.PNG" width="45" alt="text"></p>
+</div>
+</body>
+</html>
