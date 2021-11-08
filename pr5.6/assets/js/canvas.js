@@ -10,18 +10,24 @@ function canvas(selector, options){
   // отримуємо координати canvas відносно viewport
    const rect = canvas.getBoundingClientRect();
 
+   let mycolor = context.strokeColor;
+   let mywidth = 5;
+
   // ...
   let isPaint = false // чи активно малювання
-let points = [] //масив з точками
+  let points = [] //масив з точками
 
 	// об’являємо функцію додавання точок в масив
-const addPoint = (x, y, dragging) => {
-   // преобразуємо координати події кліка миші відносно canvas
-   points.push({
-       x: (x - rect.left),
-       y: (y - rect.top),
-       dragging: dragging
-   })
+   const addPoint = (x, y, dragging) => {
+      // преобразуємо координати події кліка миші відносно canvas
+      console.log(mycolor)
+      points.push({
+          x: (x - rect.left),
+          y: (y - rect.top),
+          dragging: dragging,
+        color: mycolor,
+        width: mywidth,
+      })
 }
 
 	 // головна функція для малювання
@@ -35,6 +41,8 @@ const addPoint = (x, y, dragging) => {
    let prevPoint = null;
    for (let point of points){
        context.beginPath();
+       context.strokeStyle = point.color;
+       context.lineWidth = point.width;
        if (point.dragging && prevPoint){
            context.moveTo(prevPoint.x, prevPoint.y)
        } else {
@@ -173,14 +181,15 @@ toolBar.insertAdjacentElement('afterbegin', tsBtn);
 	 
 	 
 	
-	document.getElementById('myColor').oninput = function(){
-		options.strokeColor = this.value;
-	}
-	
-	document.getElementById('brushSize').oninput = function(){
-		options.strokeWidth = this.value;
-	}
-
+     document.getElementById('myColor').oninput = function(){
+      options.strokeColor = this.value;
+       mycolor = this.value;
+    }
+    
+    document.getElementById('brushSize').oninput = function(){
+      options.strokeWidth = this.value;
+       mywidth = this.value;
+    }
 }
 
 window.onload = function(){
