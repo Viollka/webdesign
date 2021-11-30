@@ -108,11 +108,15 @@ restoreBtn.width = "50";
 restoreBtn.height = "50";
 
 
+
+
+
 const tsBtn = document.createElement('img')
 tsBtn.classList.add('btn')
 tsBtn.src = "public/image/time.png";
 tsBtn.width = "50";
 tsBtn.height = "50";
+
 
 const bgBtn = document.createElement('img')
 bgBtn.classList.add('btn')
@@ -178,6 +182,9 @@ toolBar.insertAdjacentElement('afterbegin', tsBtn);
   toolBar.insertAdjacentElement('afterbegin', downloadBtn);
 	 toolBar.insertAdjacentElement('afterbegin', restoreBtn);
 	  toolBar.insertAdjacentElement('afterbegin', bgBtn);
+   
+
+
 	 
 	 
 	
